@@ -2,17 +2,20 @@ import giphy from "./assets/giphy.gif";
 import React from 'react';
 import './App.css';
 import { useState } from 'react';
-import { placeholder } from "@testing-library/react";
 import Helmet from 'react-helmet'
+import { useGlitch } from 'react-powerglitch'
 
 function App() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
+  const glitch = useGlitch();
   return (
     <div className="App">
       <div className="portfolo">
         <center>
-          <h1>Enter AbdulRahman's Domain | HollowByte</h1>
+          <h1 >
+            <span ref={glitch.ref}>Enter AbdulRahman's Domain | HollowByte</span></h1>
+            
         </center>
         {<Helmet>
           <title>Anomalous</title>
@@ -54,7 +57,7 @@ function App() {
 
           {output}
         </div>
-     </div>
+      </div>
     </div>
   );
 }
